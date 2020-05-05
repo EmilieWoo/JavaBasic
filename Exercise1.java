@@ -1,34 +1,28 @@
-package basic;
+package Exercise;
 
 import java.util.Scanner;
 
-public class Exercise1 {//학점관리 프로그램
+public class Exercise1 {// 시험점수를 입력받아~ 점수를 출력하는 프로그램 만들기
 	public static void main(String[] args) {
-		//배열을 이용한 학사관리
-		String Ujungli[]= {"김복수","김기린","나왕눈","이곡길"};
-		int score[] =new int[4];
+		Scanner scan = new Scanner(System.in);
+		System.out.println("점수를 입력해주세요");
+		int score = scan.nextInt();
+		String grade;
+		if(score >=90) {
+			grade ="A";
+		}else if(score >=80 && score <90){
+			grade ="B";
+			
+		}else if(score >=70 && score <80) {
+			grade ="C";
+		}else if(score>=60 && score<70) {
+			grade = "D";
+		}else {
+			grade ="F";
+		}
 		
-		
-		Scanner scanner = new Scanner(System.in);
-		
-		System.out.println(Ujungli[0] +"의 점수를 입력해주세요");
-		score[0]= scanner.nextInt();
-		
-		System.out.println(Ujungli[1] +"의 점수를 입력해주세요");
-		score[1]= scanner.nextInt();
-		
-		System.out.println(Ujungli[2] +"의 점수를 입력해주세요");
-		score[2]= scanner.nextInt();
-		
-		System.out.println(Ujungli[3] +"의 점수를 입력해주세요");
-		score[3]= scanner.nextInt();
-		
-		
-		double ave = (double)(score[0]+ score[1]+score[2]+ score[3])/4;
-		
-		System.out.println("전체평균은 "+ ave);
-		
-		System.out.println("arraylength는 " + Ujungli.length );
-		
+	System.out.println("이번 성적은 "+ score+"점이고 결과는 "+ grade +"등급입니다. ");
+		scan.close();
 	}
+
 }
